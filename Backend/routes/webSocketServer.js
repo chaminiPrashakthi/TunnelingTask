@@ -1,30 +1,29 @@
-// const WebSocket = require('ws')
+const WebSocket = require('ws')
 const express = require('express');
-// const app = express();
+const app = express();
 const router = express.Router();
-// const path = require('path');
-// const bodyParser = require('body-parser');
+const path = require('path');
+const bodyParser = require('body-parser');
 
-// app.use('/', router);
-// // app.listen(process.env.port || 8000);
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/', router);
+// app.listen(process.env.port || 8000);
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 var portVal = null;
 var text;
-// const wss = new WebSocket.Server({ port: 8080 })
+const wss = new WebSocket.Server({ port: 8080 })
 
-const io = require("socket.io"),
-    server = io.listen(8080);
+// const io = require("socket.io"),
+//     server = io.listen(8080);
 
-// event fired every time a new client connects:
-server.on('connection', function (connection) {
-    console.log('Opened connection ');
-});
+// server.on('connection', function (connection) {
+//     console.log('Opened connection ');
+// });
 
 // connection establish
-// wss.on('connection', function (connection) {
-//     console.log('Opened connection ');
+wss.on('connection', function (connection) {
+    console.log('Opened connection ');
 
 
 //     app.post('/connection', function (req, res) {
@@ -52,5 +51,5 @@ server.on('connection', function (connection) {
 //         console.log('Closed Connection ');
 //     });
 
-// });
+});
 module.exports = router;
