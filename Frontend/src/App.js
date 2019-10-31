@@ -13,11 +13,12 @@ class App extends Component {
     fetch("http://15.206.88.74:3000")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
+      console.log(res.text());
   }
   componentDidMount() {
     this.callAPI();
   }
-  
+
   updateState() {
     alert("clicked");
   }
