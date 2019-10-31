@@ -8,13 +8,18 @@ class App extends Component {
     this.state = { apiResponse: '' }
 
   }
-  callAPI() {
+  fromAPI() {
 
     fetch("http://15.206.88.74:8000/")
       .then(res => res.json())
       .then(data => {
         console.log(data);
       });
+  }
+  callAPI(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(data)
   }
 
   render() {
