@@ -1,11 +1,11 @@
 var WebSocket = require('ws');
 const exec = require('child_process').exec;
 const io = require("socket.io-client"),
-const ioClient = io.connect("ws://15.206.88.74:8080");
+    ioClient = io.connect("ws://15.206.88.74:8080");
 var message = null;
 
 //web socket connection
-ioClient.on = () =>{
+ioClient.on = () => {
     console.log('Connected');
 }
 // ioClient.on("seq-num", (msg) => console.info(msg));

@@ -10,7 +10,7 @@ class App extends Component {
 
   }
   callAPI() {
-    fetch("15.206.88.74:3000")
+    fetch("ws://15.206.88.74:3000")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
   }
