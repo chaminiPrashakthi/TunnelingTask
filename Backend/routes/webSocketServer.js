@@ -15,11 +15,11 @@ var text;
 // const wss = new WebSocket.Server({ port: 8080 })
 
 const io = require("socket.io"),
-const server = io.listen(8080);
+    server = io.listen(8080);
 
 // event fired every time a new client connects:
 server.on('connection', function (connection) {
-        console.log('Opened connection ');
+    console.log('Opened connection ');
 });
 
 // connection establish
