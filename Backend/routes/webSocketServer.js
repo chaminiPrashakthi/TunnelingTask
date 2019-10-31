@@ -6,7 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 app.use('/', router);
-app.listen(process.env.port || 8000);
+// app.listen(process.env.port || 8000);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 

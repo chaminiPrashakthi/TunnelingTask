@@ -10,7 +10,7 @@ class App extends Component {
 
   }
   callAPI() {
-    fetch("ws://ec2-15-206-88-74.ap-south-1.compute.amazonaws.com:8000")
+    fetch("15.206.88.74:3000")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
   }

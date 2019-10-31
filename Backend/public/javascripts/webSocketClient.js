@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 
 var message = null;
 //web socket connection
-const connection = new WebSocket('ws://ec2-15-206-88-74.ap-south-1.compute.amazonaws.com:8080');
+const connection = new WebSocket('ws://15.206.88.74:8080');
 
 connection.onopen = () => {
     console.log('connected');
