@@ -1,15 +1,6 @@
 var WebSocket = require('ws');
 const exec = require('child_process').exec;
-// const io = require("socket.io-client"),
-//     ioClient = io.connect("ws://15.206.88.74:8080");
 var message = null;
-
-//web socket connection
-// ioClient.on = () => {
-//     console.log('Connected');
-// }
-// ioClient.on("seq-num", (msg) => console.info(msg));
-
 
 const connection = new WebSocket('ws://15.206.88.74:8080');
 
@@ -17,18 +8,18 @@ connection.onopen = () => {
     console.log('connected');
 }
 
-// connection.onclose = () => {
-//     console.error('disconnected');
-// }
+connection.onclose = () => {
+    console.error('disconnected');
+}
 
-// connection.onmessage = e => {
-//     console.log(e.data + 'Port No');
-//     portForwarding(e.data);
-// }
+connection.onmessage = e => {
+    console.log(e.data + 'Port No');
+    portForwarding(e.data);
+}
 
-// connection.onerror = (error) => {
-//     console.error('failed to connect', error);
-// }
+connection.onerror = (error) => {
+    console.error('failed to connect', error);
+}
 
 //ssh tunneling
 
