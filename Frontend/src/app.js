@@ -16,7 +16,7 @@ class App extends Component {
         console.log(data);
       });
   }
-  callAPI(event) {
+  handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
     console.log(data)
@@ -24,14 +24,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
         <br></br>
         <label>Port :</label>
         <input type="text" id="portVal" name="portVal"></input>
         <br></br>
         <br></br>
         <button onClick={this.callAPI}>CLICK</button>
-      </div>
+      </form>
     );
   }
 }
