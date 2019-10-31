@@ -30,7 +30,7 @@ class App extends Component {
         <br></br>
         <br></br>
         <button onClick={this.updateState}>CLICK</button>
-        <p className="App-intro">{this.state.apiResponse}</p>
+        <p>{this.state.apiResponse}</p>
       </div>
     );
   }
