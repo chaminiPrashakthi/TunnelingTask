@@ -13,7 +13,7 @@ const wss = new WebSocket.Server({ port: 8080 })
 
 
 router.get('/', function (req, res, next) {
-    res.send('API is working properly');
+    res.send('8907');
 });
 
 // connection establish
