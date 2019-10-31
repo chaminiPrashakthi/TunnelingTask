@@ -16,22 +16,21 @@ class App extends Component {
         console.log(data);
       });
   }
-  handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    console.log(data)
-  }
-
+  doSomething = (companyinfo) => {
+    console.log(companyinfo);
+  };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <br></br>
-        <label>Port :</label>
-        <input type="text" id="portVal" name="portVal"></input>
-        <br></br>
-        <br></br>
-        <button onClick={this.callAPI}>CLICK</button>
-      </form>
+      <div>
+        <form onSubmit={this.doSomething}>
+          <br></br>
+          <label>Port :</label>
+          <input type="text" />
+          <br></br>
+          <br></br>
+          <button>CLICK</button>
+        </form>
+      </div>
     );
   }
 }
