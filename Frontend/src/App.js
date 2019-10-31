@@ -13,14 +13,7 @@ class App extends Component {
     fetch("http://15.206.88.74:3000")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
-      console.log(res.text());
-  }
-  componentDidMount() {
-    this.callAPI();
-  }
 
-  updateState() {
-    alert("clicked");
   }
 
   render() {
@@ -31,8 +24,7 @@ class App extends Component {
         <input type="text" id="portVal" name="portVal"></input>
         <br></br>
         <br></br>
-        <button onClick={this.updateState}>CLICK</button>
-        <p>{this.state.apiResponse}</p>
+        <button onClick={this.callAPI}>CLICK</button>
       </div>
     );
   }
