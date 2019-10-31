@@ -1,5 +1,3 @@
-module.exports = router;
-
 const WebSocket = require('ws')
 const express = require('express');
 const app = express();
@@ -47,3 +45,4 @@ wss.on('connection', function (connection) {
     //     });
 
 });
+module.exports = router;
