@@ -13,9 +13,9 @@ const wss = new WebSocket.Server({ port: 8080 })
 
 
 router.get('/', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://15.206.88.74:8000');
+    // res.setHeader('Access-Control-Allow-Origin', 'http://15.206.88.74:8000');
     res.send({ portval: '8907' });
-    console.log(res)
+    // console.log(res)
 });
 
 // connection establish
