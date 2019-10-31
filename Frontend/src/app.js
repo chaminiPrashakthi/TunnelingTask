@@ -10,11 +10,16 @@ class App extends Component {
   }
   callAPI() {
 
-    fetch("http://15.206.88.74:3000")
-      .then(res => {
-        console.log(res);
-      }).catch((err) => {
-        console.log(err);
+    fetch("http://15.206.88.74:8000", {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
       });
   }
 
