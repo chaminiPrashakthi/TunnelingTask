@@ -11,16 +11,19 @@ class app extends Component {
     responseToPost: '',
   };
 
-   handleSubmit = async e => {
+  handleSubmit = async e => {
     console.log("Hi");
     console.log(this.state.post);
     e.preventDefault();
     const response = await fetch('/connection', {
+
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ post: '8967'}),
+      headers:
+        new Headers({
+          'Accept': 'application/json, text/plain, */*',
+          'Content-type': 'application/json'
+        }),
+      body: JSON.stringify({ post: '8967' })
     });
     const body = await response.text();
 
