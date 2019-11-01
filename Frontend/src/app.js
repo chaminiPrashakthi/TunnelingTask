@@ -39,7 +39,7 @@ class App extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     e.preventDefault();
-    const response = await fetch('/api/world', {
+    const response = await fetch('/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
