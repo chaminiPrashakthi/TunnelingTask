@@ -17,6 +17,9 @@ class app extends Component {
     e.preventDefault();
     const response = await fetch('/connection', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ post: '8967'}),
     });
     const body = await response.text();
