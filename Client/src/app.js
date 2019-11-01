@@ -25,7 +25,7 @@ class app extends Component {
           'Content-type': 'application/json'
         },
         url: 'http://15.206.88.74:8000/connection',
-        data: JSON.stringify({ post: '8967' })
+        data: JSON.stringify({ post: this.state.post })
       });
 
 
@@ -40,7 +40,7 @@ class app extends Component {
     //     }),
     //   body: JSON.stringify({ post: '8967' })
     // });
-    const body = await response.data();
+    const body = await response.data;
 
     this.setState({ responseToPost: body });
   };
