@@ -11,15 +11,7 @@ class app extends Component {
     responseToPost: '',
   };
 
-  callApi = async () => {
-    const response = await fetch('/');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
-
-  handleSubmit = async e => {
+   handleSubmit = async e => {
     console.log("Hi");
     console.log(this.state.post);
     e.preventDefault();
