@@ -13,14 +13,14 @@ const wss = new WebSocket.Server({ port: 8080 })
 
 
 app.get('/', (req, res) => {
-    res.send({ portVal: 'Hello From Server' });
+    res.send('Hello From Server' );
 });
 
-app.post('/submit', (req, res) => {
-    console.log(req.body);
-    res.send('request. This is what you sent me: ${req.body.post}',
-    )
-});
+// app.post('/submit', (req, res) => {
+//     console.log(req.body);
+//     res.send('request. This is what you sent me: ${req.body.post}',
+//     )
+// });
 // connection establish
 wss.on('connection', function (connection) {
     console.log('Opened connection ');
