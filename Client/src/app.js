@@ -21,7 +21,7 @@ class app extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('/', {
+    const response = await fetch('/connection', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
