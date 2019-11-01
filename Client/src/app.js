@@ -11,12 +11,6 @@ class app extends Component {
     responseToPost: '',
   };
 
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
   callApi = async () => {
     const response = await fetch('/');
     const body = await response.json();
@@ -27,7 +21,7 @@ class app extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('/connection', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
