@@ -4,6 +4,8 @@ import logo from './logo.svg';
 
 import './app.css';
 
+import axios from 'axios';
+
 class app extends Component {
   state = {
     response: '',
@@ -12,17 +14,21 @@ class app extends Component {
   };
 
   handleSubmit = async e => {
-    console.log("Hi");
     console.log(this.state.post);
     e.preventDefault();
+
+    // const response = await 
+    // axios({
+    //   method: 'post',
+    //   headers:{
+    //     'Content-type': 'application/json'
+    //   },
+    //   url: 'http://15.206.88.74:8000/connection',
+    //   data: JSON.stringify({ post: '8967' })
+    // });
     const response = await fetch('/connection', {
 
       method: 'POST',
-      headers:
-        new Headers({
-          'Accept': 'application/json, text/plain, */*',
-          'Content-type': 'application/json'
-        }),
       body: JSON.stringify({ post: '8967' })
     });
     const body = await response.text();

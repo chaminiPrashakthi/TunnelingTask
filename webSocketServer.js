@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 app.use('/', router);
 app.listen(8000, () => console.log(' Server Listening'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 var portVal = null;
