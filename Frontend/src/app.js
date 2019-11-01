@@ -16,22 +16,21 @@ class App extends Component {
         console.log(data);
       });
   }
-  doSomething = (companyinfo) => {
-    console.log(companyinfo);
-  };
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.doSomething}>
-          <br></br>
-          <label>Port :</label>
-          <input type="text" />
-          <br></br>
-          <br></br>
-          <button>CLICK</button>
-        </form>
-      </div>
-    );
+
+  callAPI() {
+
+    console.log(this.state.portVal)
   }
+
+render() {
+  return (
+    <br></br>
+    <label>Port :</label>
+    <input type="text" value={this.state.portVal} />
+    <br></br>
+    <br></br>
+    <button onClick={this.callAPI}>CLICK</button>
+    );
+}
 }
 export default App;
