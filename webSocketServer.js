@@ -3,11 +3,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 app.use('/', router);
 app.listen(8000, () => console.log(' Server Listening'));
 app.use(bodyParser.json());
-
+app.use('cors');
 
 var portVal = null;
 var text;
