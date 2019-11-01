@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   handleSubmit = async e => {
+    console.log("l")
     e.preventDefault();
     const response = await fetch('"http://15.206.88.74:8000/', {
       method: 'POST',
