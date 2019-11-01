@@ -3,11 +3,11 @@ import './app.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: '' }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { apiResponse: '' }
 
-  }
+  // }
   state = {
     response: '',
     post: '',
