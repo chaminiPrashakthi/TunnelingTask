@@ -13,9 +13,17 @@ var portVal = null;
 var text;
 const wss = new WebSocket.Server({ port: 8080 })
 
-app.get('/', function (req, res) {
-    res.send('Success');
-});
+// API calls
+app.get('/', (req, res) => {
+    res.send({ express: 'Hello From Express' });
+  });
+  
+  app.post('/connection', (req, res) => {
+    console.log(req.body);
+    res.send(
+      `I received your POST request. This is what you sent me: ${req.body.post}`,
+    );
+  })
 
 // connection establish
 // wss.on('connection', function (connection) {
