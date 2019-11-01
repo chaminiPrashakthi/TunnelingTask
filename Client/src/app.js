@@ -10,21 +10,21 @@ class app extends Component {
     post: '',
     responseToPost: '',
   };
-  
+
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
   }
-  
+
   callApi = async () => {
     const response = await fetch('/');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    
+
     return body;
   };
-  
+
   handleSubmit = async e => {
     e.preventDefault();
     const response = await fetch('/connection', {
@@ -35,31 +35,27 @@ class app extends Component {
       body: JSON.stringify({ post: this.state.post }),
     });
     const body = await response.text();
-    
+
     this.setState({ responseToPost: body });
   };
-  
-render() {
+
+  render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
+
+          <a className="App-link"
             href="https://reactjs.org"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+            rel="noopener noreferrer">
+
           </a>
         </header>
         <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
           <p>
-            <strong>Post to Server:</strong>
+            <strong>Port Number:</strong>
           </p>
           <input
             type="text"
