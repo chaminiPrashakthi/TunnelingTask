@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 app.use('/', router);
-app.listen(process.env.port || 8000);
+app.listen(8000, () => console.log(`Listening on port ${port}`));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
@@ -14,7 +14,8 @@ var text;
 const wss = new WebSocket.Server({ port: 8080 })
 
 app.post('/connection', (req, res) => {
-    console.log(req.body);
+    console.log('Server');
+    console.log(req.body.post);
     res.send('${req.body.post}');
 })
 
