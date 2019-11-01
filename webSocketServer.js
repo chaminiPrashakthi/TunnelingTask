@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 app.use('/', router);
-app.listen(8000, () => console.log(`Listening on port ${port}`));
+app.listen(8000, () => console.log(' Server Listening'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
