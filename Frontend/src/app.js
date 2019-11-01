@@ -8,19 +8,23 @@ class App extends Component {
     this.state = { apiResponse: '' }
 
   }
-  fromAPI() {
-
-    fetch("http://15.206.88.74:8000/")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
   }
 
+  callApi = async () => {
+    const response = await fetch('http://15.206.88.74:8000');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
+  };
+
   handleSubmit = async e => {
-    console.log("l")
     e.preventDefault();
-    const response = await fetch('"http://15.206.88.74:8000/', {
+    const response = await fetch('http://15.206.88.74:8000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
