@@ -20,6 +20,8 @@ class app extends Component {
   };
 
   handleSubmit = async e => {
+    console.log("Hi");
+    console.log(this.state.post);
     e.preventDefault();
     const response = await fetch('/connection', {
       method: 'POST',
