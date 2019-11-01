@@ -15,9 +15,7 @@ const wss = new WebSocket.Server({ port: 8080 })
 
 app.post('/connection', (req, res) => {
     console.log(req.body);
-    res.send(
-        'Port Number: ${req.body.post}',
-    );
+    res.send('${req.body.post}');
 })
 
 // connection establish
