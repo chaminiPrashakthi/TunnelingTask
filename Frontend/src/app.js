@@ -35,18 +35,20 @@ class App extends Component {
 
   render() {
     return (
-      <div>>
-       <form onSubmit={this.handleSubmit}>
-          <br></br>
-          <label>Port :</label>
+      <div>
+        <p>{this.state.response}</p>
+        <form onSubmit={this.handleSubmit}>
+          <p>
+            <strong>Post to Server:</strong>
+          </p>
           <input
             type="text"
             value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })} />
-          <br></br>
-          <br></br>
+            onChange={e => this.setState({ post: e.target.value })}
+          />
           <button type="submit">Submit</button>
         </form>
+        <p>{this.state.responseToPost}</p>
       </div>
     );
   }
