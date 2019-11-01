@@ -8,29 +8,56 @@ class App extends Component {
     this.state = { apiResponse: '' }
 
   }
-  fromAPI() {
+  state = {
+    response: '',
+    post: '',
+    responseToPost: '',
+  };
 
-    fetch("http://15.206.88.74:8000/")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
   }
 
-  callAPI() {
+  callApi = async () => {
+    const response = await fetch('/');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
 
-    console.log(this.state.portVal)
-  }
+    return body;
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ post: this.state.post }),
+    });
+    const body = await response.text();
+
+    this.setState({ responseToPost: body });
+  };
+
 
   render() {
     return (
       <div>>
-        <br></br>
-        <label>Port :</label>
-        <input type="text" value={this.state.portVal} />
-        <br></br>
-        <br></br>
-        <button onClick={this.callAPI}>CLICK</button>
+      <form onSubmit={this.handleSubmit}>
+          <p>
+            <strong>Post to Server:</strong>
+          </p>
+          <input
+            type="text"
+            value={this.state.post}
+            onChange={e => this.setState({ post: e.target.value })}
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <p>{this.state.responseToPost}</p>
       </div>
     );
   }

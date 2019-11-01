@@ -12,19 +12,15 @@ var text;
 const wss = new WebSocket.Server({ port: 8080 })
 
 
-router.get('/', function (req, res, next) {
-    // res.setHeader('Access-Control-Allow-Origin', 'http://15.206.88.74:8000');
-    res.send('8907');
-    // console.log(res)
+app.get('/', (req, res) => {
+    res.send({ portVal: 'Hello From Server' });
 });
 
-router.post('/', (req, res) => {
+app.post('/', (req, res) => {
     console.log(req.body);
-    res.send(
-      `I received your POST request. This is what you sent me: ${req.body.post}`,
-    );
-  });
-
+    res.send('request. This is what you sent me: ${req.body.post}',
+    )
+});
 // connection establish
 wss.on('connection', function (connection) {
     console.log('Opened connection ');
