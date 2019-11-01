@@ -36,7 +36,7 @@ wss.on('connection', function (connection) {
 
         });
         res.send(text+" connection with " +req.body.post);
-        res.send();
+        // res.send();
     })
 
     // The connection was closed

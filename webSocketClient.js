@@ -1,5 +1,6 @@
 var WebSocket = require('ws');
 const exec = require('child_process').exec;
+var async = require("async");
 
 var message = null;
 //web socket connection
@@ -24,7 +25,7 @@ connection.onerror = (error) => {
 
 //ssh tunneling
 
-portForwarding = function(portVal) {
+portForwarding = function (portVal) {
     var
         config = {
             host: '15.206.88.74',
