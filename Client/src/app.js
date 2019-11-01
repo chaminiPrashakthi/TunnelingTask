@@ -40,7 +40,7 @@ class app extends Component {
     //     }),
     //   body: JSON.stringify({ post: '8967' })
     // });
-    const body = await response.text();
+    const body = await response.data();
 
     this.setState({ responseToPost: body });
   };
