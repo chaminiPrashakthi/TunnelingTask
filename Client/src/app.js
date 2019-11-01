@@ -28,20 +28,8 @@ class app extends Component {
         data: JSON.stringify({ post: this.state.post })
       });
 
-
-
-    // const response = await fetch('/connection', {
-
-    //   method: 'POST',
-    //   headers:
-    //     new Headers({
-    //       'Accept': 'application/json, text/plain, */*',
-    //       'Content-type': 'application/json'
-    //     }),
-    //   body: JSON.stringify({ post: '8967' })
-    // });
     const body = await response.data;
-
+    console.log(body)
     this.setState({ responseToPost: body });
   };
 
