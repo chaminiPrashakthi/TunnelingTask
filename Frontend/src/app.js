@@ -28,6 +28,13 @@ class App extends Component {
     return body;
   };
 
+  callAPI() {
+    fetch("/")
+      .then(res => res.text())
+      .then(res => this.setState({ apiResponse: res }));
+
+  };
+
   handleSubmit = async e => {
     e.preventDefault();
     const response = await fetch('/', {
@@ -48,7 +55,7 @@ class App extends Component {
       <div>
       <form onSubmit={this.handleSubmit}>
           <p>
-            <strong>Post to Server:</strong>
+            <strong>Port:</strong>
           </p>
           <input
             type="text"
