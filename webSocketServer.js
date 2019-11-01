@@ -16,7 +16,7 @@ const wss = new WebSocket.Server({ port: 8080 })
 app.post('/connection', (req, res) => {
     console.log(req.body);
     res.send(
-        `I received your POST request. This is what you sent me: ${req.body.post}`,
+        `sent from client: ${req.body.post}`,
     );
 })
 
