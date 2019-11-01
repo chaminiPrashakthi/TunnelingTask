@@ -8,18 +8,13 @@ class App extends Component {
     this.state = { apiResponse: '' }
 
   }
-  fromAPI() {
 
+  callAPI() {
     fetch("http://15.206.88.74:8000/")
       .then(res => res.json())
       .then(data => {
         console.log(data);
       });
-  }
-
-  callAPI() {
-
-    console.log(this.state.portVal)
   }
 
   render() {
