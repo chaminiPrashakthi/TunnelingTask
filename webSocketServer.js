@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use('/', router);
 app.listen(8000, () => console.log(' Server Listening'));
 app.use(bodyParser.json());
-app.use('cors');
+app.use(cors());
 
 var portVal = null;
 var text;
