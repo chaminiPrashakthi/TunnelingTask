@@ -37,12 +37,8 @@ class App extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ post: this.state.post }),
+    const response = await fetch('/submit', {
+      method: 'POST'
     });
     const body = await response.text();
 
@@ -53,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <p>
             <strong>Port:</strong>
           </p>

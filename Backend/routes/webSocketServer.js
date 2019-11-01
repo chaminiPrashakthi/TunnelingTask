@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send({ portVal: 'Hello From Server' });
 });
 
-app.post('/', (req, res) => {
+app.post('/submit', (req, res) => {
     console.log(req.body);
     res.send('request. This is what you sent me: ${req.body.post}',
     )
