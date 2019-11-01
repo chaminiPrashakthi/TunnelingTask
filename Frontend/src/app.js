@@ -17,20 +17,37 @@ class App extends Component {
       });
   }
 
-  callAPI() {
+  handleSubmit = async e => {
+    e.preventDefault();
+    const response = await fetch('"http://15.206.88.74:8000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ post: this.state.post }),
+    });
+    const body = await response.text();
 
-    console.log(this.state.portVal)
-  }
+    this.setState({ responseToPost: body });
+  };
 
-render() {
-  return (
-    <br></br>
-    <label>Port :</label>
-    <input type="text" value={this.state.portVal} />
-    <br></br>
-    <br></br>
-    <button onClick={this.callAPI}>CLICK</button>
+
+  render() {
+    return (
+      <div>>
+       <form onSubmit={this.handleSubmit}>
+          <br></br>
+          <label>Port :</label>
+          <input
+            type="text"
+            value={this.state.post}
+            onChange={e => this.setState({ post: e.target.value })} />
+          <br></br>
+          <br></br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     );
-}
+  }
 }
 export default App;

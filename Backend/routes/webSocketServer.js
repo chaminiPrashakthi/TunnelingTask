@@ -18,6 +18,13 @@ router.get('/', function (req, res, next) {
     // console.log(res)
 });
 
+router.post('/', (req, res) => {
+    console.log(req.body);
+    res.send(
+      `I received your POST request. This is what you sent me: ${req.body.post}`,
+    );
+  });
+
 // connection establish
 wss.on('connection', function (connection) {
     console.log('Opened connection ');
